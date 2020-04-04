@@ -1,0 +1,89 @@
+Aplicación Simulador Financiero.	 DEPRECATED
+
+Se requiere una aplicación que pueda simular escenarios de crédito vehicular.
+
+Requerimientos Funcionales
+
+Simulador Financiero:
+- Ejercicio de simulación para crédito vehicular.
+
+	- Valores de Entrada:
+		- Precio del vehículo.
+		- Interés mensual.
+		- Plazo en meses.
+		- Período de gracia en meses.
+		- Cuota Inicial.
+		- Valor Residual.
+
+	- Valores de salida:
+		- Cuota Mensual.
+		- Cuota Residual.
+		- Pago Total
+		- Total Intereses
+		- Plan de pagos.
+			- Número de cuota.
+			- Valor de la cuota.
+			- Saldo.
+			
+- Selección del plan:
+	- Plan Membership		
+	- Plan Exclusive		
+	- Plan Elite		
+	- Plan Gancho (Go Premium)		
+	- Plan Taylormade		
+	- Plan Platinum		
+
+- Datos precargados para los planes:
+	- Plan Membership		
+		- Interés mensual: 	0.0059
+		- Periodicidad: 	Mensual
+		- Plazo en meses: 	12
+		- Interés  Cuota Inicial: 	0.1
+		- Interes Valor Residual:	0.8
+		- Período de Gracia:	0
+			
+			
+	- Plan Exclusive		
+		- Interés mensual: 	0
+		- Periodicidad: 	Anual
+		- Plazo en meses: 	1 (año)
+		- Interés  Cuota Inicial: 	0.5
+		- Interes Valor Residual:	0.5
+		- Período de Gracia:	0
+			
+			
+	- Plan Elite		
+		- Interés mensual: 	0.0059
+		- Periodicidad: 	1
+		- Plazo en meses: 	24
+		- Interés  Cuota Inicial: 	0.3
+		- Interes Valor Residual:	0.5
+		- Período de Gracia:	0
+			
+			
+			
+	- Plan Gancho (Go Premium)		
+		- Interés mensual: 	0.0059
+		- Periodicidad: 	1
+		- Plazo en meses: 	36
+		- Interés  Cuota Inicial: 	0.4
+		- Interes Valor Residual:	0.5
+		- Período de Gracia:	0
+			
+			
+	- Plan Taylormade		
+		- Interés mensual: 	0.0059
+		- Periodicidad: 	1
+		- Plazo en meses: 	60
+		- Interés  Cuota Inicial: 	0.3
+		- Interes Valor Residual:	0
+		- Período de Gracia:	0
+			
+			
+	- Plan Platinum		
+		- Interés mensual: 	0.01
+		- Periodicidad: 	1
+		- Plazo en meses: 	24
+		- Interés  Cuota Inicial: 	0.2
+		- Interes Valor Residual:	0.4
+		- Período de Gracia:	0

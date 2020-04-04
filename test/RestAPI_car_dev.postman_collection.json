@@ -1,0 +1,126 @@
+{
+	"info": {
+		"_postman_id": "a3159dae-8508-4801-bcd6-988999ef90c9",
+		"name": "RestAPI_car_dev",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "GET plans",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/api/plans?name=membership",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"api",
+						"plans"
+					],
+					"query": [
+						{
+							"key": "name",
+							"value": "membership"
+						}
+					]
+				},
+				"description": "Puede buscar por cualquier parametro"
+			},
+			"response": []
+		},
+		{
+			"name": "GET plan",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/api/plans/5de480a7c4a02b5e27ac0c57",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"api",
+						"plans",
+						"5de480a7c4a02b5e27ac0c57"
+					]
+				},
+				"description": "Busca plan por el Id"
+			},
+			"response": []
+		},
+		{
+			"name": "POST plan",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"name\": \"Prueba\",\n  \"rate\": 0.01598,\n  \"per\": 1,\n  \"n_per\": 11,\n  \"down_payment\": 0.3,\n  \"residual_payment\": 0.4,\n  \"grace_per\": 0,\n  \"image_url\": \"images/timelines/00.01.Prueba.png\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/api/plans",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"api",
+						"plans"
+					]
+				},
+				"description": "Crear un nuevo plan"
+			},
+			"response": []
+		},
+		{
+			"name": "PUT plan",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"active\": false\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/api/plans/5de4890605f56e6026bfc689",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"api",
+						"plans",
+						"5de4890605f56e6026bfc689"
+					]
+				},
+				"description": "Actualiza un plan"
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}

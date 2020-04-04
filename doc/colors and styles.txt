@@ -1,0 +1,45 @@
+Fonts:
+
+
+Greys
+	Dark (Notmal):	#666666;
+	Medium:	#f9fbf9;	(light for dark background)	(Pre #d9d9d9)
+	Light:	#adadad;	(Placeholder)
+	Borders:	#d9d9d9;
+	
+Background	
+
+
+Greys
+	Light (Main):	#f9fbf9
+	Darker (Header-Footer):	#0c121c
+	Medium:	#0c121c -> #4a4f54
+
+Greens
+	Dark (Notmal):	#00512c
+	Light:	#00773c
+	
+Light (Main):	#f9fbf9
+Darker (Header-Footer):	#0c121c
+Medium:	#0c121c -> #4a4f54
+
+
+
+Grises
+
+Light (Main):	#f9fbf9
+Darker (Header-Footer):	#0c121c
+Medium:	#0c121c -> #4a4f54
+
+
+Dark (Notmal):	#00512c
+Light:	#00773c
+
+
+Chrome 70.
+Safari 12.
+Firefox 63.
+
+Edge 17.
+Internet Explorer 11.
+Opera 56.
