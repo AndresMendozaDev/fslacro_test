@@ -1,0 +1,6 @@
+- Cantidad de periodos
+- Tamaño del período
+- Comparador todos contra todos	
+	X Mejor resaltado en comparador
+X Cuotas extra
+X Imagenes
