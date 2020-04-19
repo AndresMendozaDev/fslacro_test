@@ -6,7 +6,7 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 
-	<meta property="og:image" content="images/logo-Both.jpg">
+	<meta property="og:image" content="http://andresmendoza.io/images/logo-Both.jpg">
 	<meta property="og:image:type" content="image/png">
 	<meta property="og:image:width" content="1024">
 	<meta property="og:image:height" content="1024">
@@ -31,12 +31,22 @@
 	<meta name="msapplication-TileImage" content="images/icons/ms-icon-144x144.png">
 	<meta name="theme-color" content="#ffffff">
 	<!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="vendor/bootstrap/css/bootstrap.min.css">
+	<!-- <link rel="stylesheet" type="text/css" href="vendor/bootstrap/css/bootstrap.min.css"> -->
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
 	<!--===============================================================================================-->
 	<!-- <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js" integrity="sha384-kW+oWsYx3YpxvjtZjFXqazFpA7UP/MbiY4jvs+RWZo2+N94PFZ36T6TFkc9O3qoB" crossorigin="anonymous"></script> -->
-	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.2/css/all.css" integrity="sha384-/rXc/GQVaYpyDdyxK+ecHPVYJSN9bmVFBvjA/9eOB+pb3F2w2N6fc5qB9Ew5yIns" crossorigin="anonymous">
-	<!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="css/simulator_full.min.css">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.2/css/all.css" integrity="sha384-/rXc/GQVaYpyDdyxK+ecHPVYJSN9bmVFBvjA/9eOB+pb3F2w2N6fc5qB9Ew5yIns" crossorigin="anonymous"><!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="css/util.css">
+
+	<link rel="stylesheet" type="text/css" href="css/app.css">
+	<link rel="stylesheet" type="text/css" href="css/main.css">
+
+	<link rel="stylesheet" type="text/css" href="css/simulator.css">
 	<!--===============================================================================================-->
 </head>
 
@@ -133,7 +143,7 @@
 							</div>
 						</div>
 					</div>
-					
+
 					<!-- Term and Grace -->
 					<div class="">
 						<div class="leftPercent">
@@ -348,14 +358,16 @@
 
 
 			</div>
+			<!--
 			<div class="logo-footer">
 				<img class="logo-img" src="images/Jaguar.gif" alt="The New F-Pacer SVR">
 				<p>Desarrollado por <a href="mailto:am@andresmendoza.io?Subject=Hello%20Andres" target="_top">Andrés Mendoza</a></p>
 			</div>
+			-->
 			</div>
 
 		</div>
-		
+
 		<!--=====================================EXT=======================================================-->
 		<script src="vendor/jquery/jquery-3.2.1.min.js"></script>
 		<!--===============================================================================================-->
@@ -363,22 +375,44 @@
 		<script src="vendor/bootstrap/js/bootstrap.min.js"></script>
 		<!--===============================================================================================-->
 		<script src="js/ext/jquery.inputmask.bundle.min.js"></script>
-		
+
+		<!--======================================UTIL=====================================================-->
+		<script src="js/util/f_utils.js"></script>
+		<script src="js/util/props.js"></script>
+		<script src="js/util/props_simu.js"></script>
+		<script src="js/util/validations.js"></script>
+		<!--======================================Plan Object - TAGS =====================================================-->
+		<script src="js/AppSimu.js"></script>
+		<script src="js/plan/tags/common/PlanInputTags.js"></script>
+		<script src="js/plan/tags/common/PlanOutputTags.js"></script>
+		<script src="js/plan/tags/common/PlanTags.js"></script>
+		<script src="js/plan/tags/simu/PlanComplementaryOutputTags.js"></script>
+		<script src="js/plan/tags/common/PlanIOFull.js"></script>
+		<script src="js/plan/tags/simu/ModuleIOFull.js"></script>
+		<script src="js/plan/tags/simu/ModuleComplementaryTags.js"></script>
+		<script src="js/plan/tags/common/PlanIO.js"></script>
+		<!--======================================Plan Object - LISTENERS =====================================================-->
+		<script src="js/plan/listeners/ui_listeners.js"></script>
+		<script src="js/plan/listeners/ui_listeners-simu.js"></script>
+		<!-- <script src="js/util/input_mask_start.js"></script> -->
+
 		<!--======================================FINANCE==================================================-->
-		<script src="js/fslacro_min_obf.js"></script>
-		
-		<!--======================================SERVICE WORKERS==========================================-->
-		<script src="index.js"></script>
+		<script src="js/finance.js"></script>
+		<script src="js/plan/Plan.js"></script>
 		<!--===============================================================================================-->
+		<script src="js/app.js"></script>
+		<!--===============================================================================================-->
+
+		<!--======================================SERVICE WORKERS==========================================-->
+		<!-- <script src="index_simu.js"></script> -->
+
+		<!--======================================WWW000 HOST===============================================-->
 		<script>
-			/*
 			$(document).ready(function(){
 					$('body').find('img[src$="https://cdn.rawgit.com/000webhost/logo/e9bd13f7/footer-powered-by-000webhost-white2.png"]').remove();
 			});
-			*/
 		</script>
 		<!--===============================================================================================-->
-
 </body>
 
 </html>
