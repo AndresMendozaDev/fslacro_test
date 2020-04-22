@@ -48,8 +48,6 @@
 </head>
 
 <body>
-
-
 	<div class="container-contact100">
 		<div class="wrap-contact100">
 			<div class="logo">
@@ -64,20 +62,7 @@
 				<span class="contact100-form-title">Compare Planes</span>
 
 				<!-- price -->
-				<!-- <div class="price-div center-content">
-					<div class="wrap-input100">
-						<span class="label-input100 label-input100-basics">Precio del vehículo <span class="required-highlight">*</span></span>
-						<div class="single-icon center-content">
-							<div class="left-input">
-								<div class="fa-icon-center"><i class="fas fa-car"></i></div>
-							</div>
-							<div class="right-input">
-								<input class="input100 input100-basics numMask" type="text" name="price_tag" id="price_tag" placeholder="Precio" pattern="[0-9]*">
-								<span class="focus-input100"></span>
-							</div>
-						</div>
-					</div>
-				</div> -->
+
 
 				<!-- price -->
 				<div class="wrap-input100">
@@ -105,6 +90,7 @@
 						<!-- Select Plan -->
 						<div class="select_container">
 							<select class="plan_selector" id="plan_name_p1_tag">
+								<!--<option value="5df2949478e6e1de999031da">Elite</option>-->
 							</select>
 						</div>
 					</div>
@@ -112,6 +98,7 @@
 						<!-- Select Plan -->
 						<div class="select_container">
 							<select class="plan_selector" id="plan_name_p2_tag">
+								<!--<option value="5df2949478e6e1de999031dc">Taylormade</option>-->
 							</select>
 						</div>
 					</div>
@@ -139,9 +126,13 @@
 								<!-- <div class="adjusted-input"><span class="value-measure-class"><input class="input100-basics independent-field_p1 percentMask" type="text" name="rate_p1_tag" id="rate_p1_tag" placeholder="%"></span></div> -->
 								<div class="percent-comparator rate-div-width-main">
 									<!-- Percent Number -->
-									<div class="percent-value adjusted-input rate-div-width"><input
-											class="input100 input100-basics independent-field_p1_dec percentMask"
-											type="text" name="rate_p1_tag" id="rate_p1_tag" placeholder="$"></div>
+									<div class="percent-value adjusted-input rate-div-width">
+										<!--percentMask-->
+										<input
+											class="input100 input100-basics rate_focus independent-field_dec"
+											type="text" name="rate_p1_tag" id="rate_p1_tag" placeholder="$"
+										>
+									</div>
 									<!-- Percent Symbol -->
 									<div class="percent-symbol"><input class="input100 input100-basics" type="text"
 											disabled placeholder="%" value="%"></div>
@@ -153,9 +144,12 @@
 								<!-- <div class="adjusted-input"><span class="value-measure-class"><input class="input100-basics independent-field_p2 percentMask" type="text" name="rate_p2_tag" id="rate_p2_tag" placeholder="%"></span></div> -->
 								<div class="percent-comparator rate-div-width-main">
 									<!-- Percent Number -->
-									<div class="percent-value adjusted-input rate-div-width"><input
-											class="input100 input100-basics independent-field_p2_dec" type="text"
-											name="rate_p2_tag" id="rate_p2_tag" placeholder="$"></div>
+									<div class="percent-value adjusted-input rate-div-width">
+										<input
+											class="input100 input100-basics rate_focus independent-field_dec" 
+											type="text" name="rate_p2_tag" id="rate_p2_tag" placeholder=""
+										>
+									</div>
 									<!-- Percent Symbol -->
 									<div class="percent-symbol"><input class="input100 input100-basics" type="text"
 											disabled placeholder="%" value="%"></div>
@@ -168,26 +162,26 @@
 					<div class="item-div">
 						<div class="item-label-div">
 							<span><i class="fas fa-calendar-alt"></i></span><span
-								class="label-input100 label-input100-basics">Tamaño del período <span
+								class="label-input100 label-input100-basics">Cantidad de períodos <span
 									class="required-highlight">*</span></span>
 						</div>
 						<div class="item-value-div">
 							<div class="left">
 								<div class="text-unit">
 									<div class="percent-value adjusted-input"><input
-											class="input100 input100-basics independent-field_p1" type="text"
-											name="n_per_p1_tag" id="n_per_p1_tag" placeholder="Mes"></div>
+											class="input100 input100-basics independent-field" type="text"
+											name="n_per_p1_tag" id="n_per_p1_tag" placeholder="Períodos"></div>
 									<div class="percent-symbol"><input class="input100 input100-basics" type="text"
-											disabled placeholder="Meses" value="Meses"></div>
+											disabled placeholder="Períodos" value="Períodos"></div>
 								</div>
 							</div>
 							<div class="right">
 								<div class="text-unit">
 									<div class="percent-value adjusted-input"><input
-											class="input100 input100-basics independent-field_p2" type="text"
-											name="n_per_p2_tag" id="n_per_p2_tag" placeholder="Mes"></div>
+											class="input100 input100-basics independent-field" type="text"
+											name="n_per_p2_tag" id="n_per_p2_tag" placeholder="Períodos"></div>
 									<div class="percent-symbol"><input class="input100 input100-basics" type="text"
-											disabled placeholder="Meses" value="Meses"></div>
+											disabled placeholder="Períodos" value="Períodos"></div>
 								</div>
 							</div>
 						</div>
@@ -196,15 +190,15 @@
 					<div class="item-div">
 						<div class="item-label-div">
 							<span><i class="fas fa-calendar-alt"></i></span><span
-								class="label-input100 label-input100-basics">Cantidad de Meses <span
+								class="label-input100 label-input100-basics">Tamaño del período <span
 									class="required-highlight">*</span></span>
 						</div>
 						<div class="item-value-div">
 							<div class="left">
 								<div class="text-unit">
 									<div class="percent-value adjusted-input"><input
-											class="input100 input100-basics independent-field_p1" type="text"
-											name="per_p1_tag" id="per_p1_tag" placeholder="Mes"></div>
+											class="input100 input100-basics independent-field" type="text"
+											name="per_p1_tag" id="per_p1_tag" placeholder="Meses"></div>
 									<div class="percent-symbol"><input class="input100 input100-basics" type="text"
 											disabled placeholder="Meses" value="Meses"></div>
 								</div>
@@ -212,8 +206,8 @@
 							<div class="right">
 								<div class="text-unit">
 									<div class="percent-value adjusted-input"><input
-											class="input100 input100-basics independent-field_p2" type="text"
-											name="per_p2_tag" id="per_p2_tag" placeholder="Mes"></div>
+											class="input100 input100-basics independent-field" type="text"
+											name="per_p2_tag" id="per_p2_tag" placeholder="Meses"></div>
 									<div class="percent-symbol"><input class="input100 input100-basics" type="text"
 											disabled placeholder="Meses" value="Meses"></div>
 								</div>
@@ -239,8 +233,8 @@
 								<div class="text-unit">
 									<!-- Percent Number -->
 									<div class="percent-value adjusted-input"><input
-											class="input100 input100-basics independent-field_p1" type="text"
-											name="months_p1_tag" id="months_p1_tag" placeholder="Mes"></div>
+											class="input100 input100-basics" type="text"
+											name="months_p1_tag" id="months_p1_tag" placeholder="Meses" disabled></div>
 									<!-- Percent Symbol -->
 									<div class="percent-symbol"><input class="input100 input100-basics" type="text"
 											disabled placeholder="Meses" value="Meses"></div>
@@ -253,8 +247,8 @@
 								<div class="text-unit">
 									<!-- Percent Number -->
 									<div class="percent-value adjusted-input"><input
-											class="input100 input100-basics independent-field_p2" type="text"
-											name="months_p2_tag" id="months_p2_tag" placeholder="Mes"></div>
+											class="input100 input100-basics" type="text"
+											name="months_p2_tag" id="months_p2_tag" placeholder="Meses" disabled></div>
 									<!-- Percent Symbol -->
 									<div class="percent-symbol"><input class="input100 input100-basics" type="text"
 											disabled placeholder="Meses" value="Meses"></div>
@@ -280,8 +274,8 @@
 								<div class="text-unit">
 									<!-- Percent Number -->
 									<div class="percent-value adjusted-input"><input
-											class="input100 input100-basics independent-field_p1" type="text"
-											name="grace_p1_tag" id="grace_p1_tag" placeholder="Mes"></div>
+											class="input100 input100-basics independent-field" type="text"
+											name="grace_p1_tag" id="grace_p1_tag" placeholder="Meses"></div>
 									<!-- Percent Symbol -->
 									<div class="percent-symbol"><input class="input100 input100-basics" type="text"
 											disabled placeholder="Meses" value="Meses"></div>
@@ -294,8 +288,8 @@
 								<div class="text-unit">
 									<!-- Percent Number -->
 									<div class="percent-value adjusted-input"><input
-											class="input100 input100-basics independent-field_p2" type="text"
-											name="grace_p2_tag" id="grace_p2_tag" placeholder="Mes"></div>
+											class="input100 input100-basics independent-field" type="text"
+											name="grace_p2_tag" id="grace_p2_tag" placeholder="Meses"></div>
 									<!-- Percent Symbol -->
 									<div class="percent-symbol"><input class="input100 input100-basics" type="text"
 											disabled placeholder="Meses" value="Meses"></div>
@@ -414,7 +408,7 @@
 						<!-- Resultados Title -->
 						<div class="sub-title"><span class="contact100-form-title">Resultados</span></div>
 
-						<!-- Monthly Payment -->
+						<!-- Periodic Payment -->
 						<div class="item-div">
 							<!-- label -->
 							<div class="item-label-div">
@@ -427,14 +421,14 @@
 								<div class="left">
 									<!-- Monthly Payment P1 -->
 									<input class="input100 input100-basics numMask" type="text"
-										name="monthly_payment_p1_tag" id="monthly_payment_p1_tag" placeholder="$"
+										name="periodic_payment_p1_tag" id="periodic_payment_p1_tag" placeholder="$"
 										pattern="[0-9]*" disabled>
 								</div>
 								<!-- p2 -->
 								<div class="right">
 									<!-- Monthly Payment P2 -->
 									<input class="input100 input100-basics numMask" type="text"
-										name="monthly_payment_p2_tag" id="monthly_payment_p2_tag" placeholder="$"
+										name="periodic_payment_p2_tag" id="periodic_payment_p2_tag" placeholder="$"
 										pattern="[0-9]*" disabled>
 								</div>
 							</div>
@@ -466,36 +460,6 @@
 								</div>
 							</div>
 						</div>
-
-						<!-- Down Payment Value -->
-						<!-- <div class="item-div">
-							<div class="item-label-div">
-								<span><i class="fas fa-sort-amount-down"></i></span><span class="label-input100 label-input100-basics">Cuota Inicial</span>
-							</div>
-							<div class="item-value-div">
-								<div class="left">
-									<input class="input100 input100-basics numMask" type="text" name="down_payment_value_p1_tag" id="down_payment_value_p1_tag" placeholder="$" pattern="[0-9]*" disabled>
-								</div>
-								<div class="right">
-									<input class="input100 input100-basics numMask" type="text" name="down_payment_value_p2_tag" id="down_payment_value_p2_tag" placeholder="$" pattern="[0-9]*" disabled>
-								</div>
-							</div>
-						</div> -->
-
-						<!-- Residual Payment Value -->
-						<!-- <div class="item-div">
-							<div class="item-label-div">
-								<span><i class="fas fa-handshake"></i></span><span class="label-input100 label-input100-basics">Valor Residual</span>
-							</div>
-							<div class="item-value-div">
-								<div class="left">
-									<input class="input100 input100-basics numMask" type="text" name="residual_payment_value_p1_tag" id="residual_payment_value_p1_tag" placeholder="$" pattern="[0-9]*" disabled>
-								</div>
-								<div class="right">
-									<input class="input100 input100-basics numMask" type="text" name="residual_payment_value_p2_tag" id="residual_payment_value_p2_tag" placeholder="$" pattern="[0-9]*" disabled>
-								</div>
-							</div>
-						</div> -->
 
 						<!-- Remaining Payment -->
 						<div class="item-div">
@@ -532,14 +496,14 @@
 							<div class="item-value-div">
 								<!-- p1 -->
 								<div class="left">
-									<!-- Accumulated Payment P1 -->
+									<!-- Total Payment P1 -->
 									<input class="input100 input100-basics numMask" type="text"
 										name="total_payment_p1_tag" id="total_payment_p1_tag" placeholder="$"
 										pattern="[0-9]*" disabled>
 								</div>
 								<!-- p2 -->
 								<div class="right">
-									<!-- Accumulated Payment P2 -->
+									<!-- Total Payment P2 -->
 									<input class="input100 input100-basics numMask" type="text"
 										name="total_payment_p2_tag" id="total_payment_p2_tag" placeholder="$"
 										pattern="[0-9]*" disabled>

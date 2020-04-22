@@ -47,8 +47,6 @@
 </head>
 
 <body>
-
-
 	<div class="container-contact100">
 		<div class="wrap-contact100">
 			<div class="logo">
@@ -76,7 +74,10 @@
 										<div class="fa-icon-center"><i class="fas fa-car"></i></div>
 									</div>
 									<div class="right-input">
-										<input class="input100 input100-basics numMask" type="text" name="price_tag" id="price_tag" placeholder="Precio" pattern="[0-9]*">
+										<input 
+											class="input100 input100-basics numMask" 
+											type="text" name="price_tag" id="price_tag" placeholder="Precio" pattern="[0-9]*"
+										>
 										<span class="focus-input100"></span>
 									</div>
 								</div>
@@ -95,10 +96,13 @@
 										<div>
 											<div class="pertcentNum">
 												<!-- <input class="input100 input100-basics independent-field" type="text" name="rate_tag" id="rate_tag" placeholder=""> -->
-												<input class="input100 input100-basics independent-field_dec" type="text" name="rate_tag" id="rate_tag" placeholder="">
+												<input 
+													class="input100 input100-basics independent-field_dec" 
+													type="text" name="rate_tag" id="rate_tag" placeholder=""
+												>
 											</div>
 											<div class="percentSymbol">
-												<input class="input100 input100-basics percentSymbolInput" type="text" placeholder="%" disabled>
+												<input class="input100 input100-basics percentSymbolInput" type="text" placeholder="" disabled>
 											</div>
 										</div>
 										<span class="focus-input100"></span>
@@ -108,7 +112,7 @@
 						</div>
 					</div>
 
-					<!-- period size and number of periods -->
+					<!-- Term - Periods: period size and number of periods -->
 					<div class="">
 						<div class="leftPercent">
 							<div class="wrap-input100">
@@ -118,7 +122,7 @@
 										<div class="fa-icon-center"><i class="fas fa-calendar-alt"></i></div>
 									</div>
 									<div class="right-input">
-										<input class="input100 input100-basics req-field independent-field" type="number" name="n_per_tag" id="n_per_tag" placeholder="Periodos">
+										<input class="input100 input100-basics req-field independent-field" type="number" min="0" name="n_per_tag" id="n_per_tag" placeholder="Periodos">
 										<span class="focus-input100"></span>
 									</div>
 								</div>
@@ -132,15 +136,15 @@
 										<div class="fa-icon-center"><i class="far fa-calendar-alt"></i></div>
 									</div>
 									<div class="right-input">
-										<input class="input100 input100-basics req-field independent-field" type="number" name="per_tag" id="per_tag" placeholder="Meses por periodo">
+										<input class="input100 input100-basics req-field independent-field" type="number" min="0" name="per_tag" id="per_tag" placeholder="Meses por periodo">
 										<span class="focus-input100"></span>
 									</div>
 								</div>
 							</div>
 						</div>
 					</div>
-					
-					<!-- Term and Grace -->
+
+					<!-- Grace and Total Months -->
 					<div class="">
 						<div class="leftPercent">
 							<div class="wrap-input100">
@@ -150,7 +154,7 @@
 										<div class="fa-icon-center"><i class="fas fa-calendar-alt"></i></div>
 									</div>
 									<div class="right-input">
-										<input class="input100 input100-basics req-field independent-field" type="number" name="months_tag" id="months_tag" placeholder="Meses">
+										<input class="input100 input100-basics req-field" type="number" name="months_tag" id="months_tag" placeholder="Meses" disabled>
 										<span class="focus-input100"></span>
 									</div>
 								</div>
@@ -164,7 +168,7 @@
 										<div class="fa-icon-center"><i class="far fa-calendar"></i></div>
 									</div>
 									<div class="right-input">
-										<input class="input100 input100-basics req-field independent-field" type="number" name="grace_tag" id="grace_tag" placeholder="Meses">
+										<input class="input100 input100-basics req-field independent-field" type="number" min="0" name="grace_tag" id="grace_tag" placeholder="Meses">
 										<span class="focus-input100"></span>
 									</div>
 								</div>
@@ -210,69 +214,69 @@
 										</div>
 									</div>
 								</div>
-							</div>
+					</div>
 
-							<!-- Final Payment -->
-							<div>
-								<span class="label-input100 label-input100-basics">Cuota Residual</span>
-								<div>
-									<div class="leftPercent">
-										<div class="wrap-input100">
-											<div class="single-icon">
-												<div class="left-input">
-													<div class="fa-icon-center"><i class="fas fa-handshake"></i></div> <!-- fas fa-angle-double-down -->
+					<!-- Final Payment -->
+					<div>
+						<span class="label-input100 label-input100-basics">Cuota Residual</span>
+						<div>
+							<div class="leftPercent">
+								<div class="wrap-input100">
+									<div class="single-icon">
+										<div class="left-input">
+											<div class="fa-icon-center"><i class="fas fa-handshake"></i></div> <!-- fas fa-angle-double-down -->
+										</div>
+										<div class="right-input">
+											<input class="input100 input100-basics numMask" type="text" name="residual_payment_value_tag" id="residual_payment_value_tag" placeholder="$"  pattern="[0-9]*">
+											<span class="focus-input100"></span>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="rightPercent">
+								<div class="wrap-input100">
+									<div class="single-icon">
+										<div class="left-input">
+											<div class="fa-icon-center"><i class="fas fa-handshake"></i></div>
+										</div>
+										<div class="right-input">
+											<div>
+												<div class="pertcentNum">
+													<input class="input100 input100-basics" type="text" name="residual_payment_tag" id="residual_payment_tag" placeholder="" pattern="[0-9]*">
 												</div>
-												<div class="right-input">
-													<input class="input100 input100-basics numMask" type="text" name="residual_payment_value_tag" id="residual_payment_value_tag" placeholder="$"  pattern="[0-9]*">
+													<div class="percentSymbol">
+														<input class="input100 input100-basics percentSymbolInput" type="text" placeholder="%" disabled>
+													</div>
+													</div>
 													<span class="focus-input100"></span>
 												</div>
 											</div>
 										</div>
-									</div>
-									<div class="rightPercent">
-										<div class="wrap-input100">
-											<div class="single-icon">
-												<div class="left-input">
-													<div class="fa-icon-center"><i class="fas fa-handshake"></i></div>
-												</div>
-												<div class="right-input">
-													<div>
-														<div class="pertcentNum">
-															<input class="input100 input100-basics" type="text" name="residual_payment_tag" id="residual_payment_tag" placeholder="" pattern="[0-9]*">
-														</div>
-															<div class="percentSymbol">
-																<input class="input100 input100-basics percentSymbolInput" type="text" placeholder="%" disabled>
-															</div>
-															</div>
-															<span class="focus-input100"></span>
-														</div>
-													</div>
-												</div>
-											</div>
-										</div>
-									</div>
+							</div>
+						</div>
+					</div>
 
-									<!-- Timeline -->
-									<div class="timeline_div_out">
-										<span class="contact100-form-title">Línea de Tiempo</span>
-										<div class="timeline_div" >
-											<img class="timeline_div_img" id="timeline_div" src="images/timelines/00.03.Elite.png" alt="Descripción del Plan">
-										</div>
-									</div>
+					<!-- Timeline -->
+					<div class="timeline_div_out">
+						<span class="contact100-form-title">Línea de Tiempo</span>
+						<div class="timeline_div" >
+							<img class="timeline_div_img" id="timeline_div" src="images/timelines/00.03.Elite.png" alt="Descripción del Plan">
+						</div>
+					</div>
 
 
-									<!-- The Modal -->
-									<div id="myModal" class="modal">
+					<!-- The Modal -->
+					<div id="myModal" class="modal">
 
-									  <!-- The Close Button -->
-									  <span class="close">&times;</span>
+						<!-- The Close Button -->
+						<span class="close">&times;</span>
 
-									  <!-- Modal Content (The Image) -->
-									  <img class="modal-content" id="img01">
+						<!-- Modal Content (The Image) -->
+						<img class="modal-content" id="img01">
 
-									  <!-- Modal Caption (Image Text) -->
-									  <div id="caption"></div>
-									</div>
+						<!-- Modal Caption (Image Text) -->
+						<div id="caption"></div>
+					</div>
 
 				</form>
 
@@ -285,9 +289,9 @@
 
 							<!-- Monthly Payment -->
 							<div class="left center_title">
-								<span class="label-input100 label-input100-basics"><i class="fa fa-credit-card"></i> Cuota Mes</span>
-								<!-- <span class="input100" id="monthly_payment_tag"></span> -->
-								<input class="input100 input100-basics numMask center-content" type="text" name="monthly_payment_tag" id="monthly_payment_tag" disabled>
+								<span class="label-input100 label-input100-basics"><i class="fa fa-credit-card"></i> Cuota Periodo</span>
+								<!-- <span class="input100" id="periodic_payment_tag"></span> -->
+								<input class="input100 input100-basics numMask center-content" type="text" name="periodic_payment_tag" id="periodic_payment_tag" disabled>
 								<span class="focus-input100"></span>
 							</div>
 
