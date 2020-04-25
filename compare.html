@@ -31,7 +31,13 @@
 	<meta name="msapplication-TileImage" content="images/icons/ms-icon-144x144.png">
 	<meta name="theme-color" content="#ffffff">
 	<!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="vendor/bootstrap/css/bootstrap.min.css">
+	<!-- <link rel="stylesheet" type="text/css" href="vendor/bootstrap/css/bootstrap.min.css"> -->
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
 	<!--===============================================================================================-->
 	<!-- <link rel="stylesheet" type="text/css" href="fonts/font-awesome-4.7.0/css/font-awesome.min.css"> -->
 	<!-- <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js" integrity="sha384-kW+oWsYx3YpxvjtZjFXqazFpA7UP/MbiY4jvs+RWZo2+N94PFZ36T6TFkc9O3qoB" crossorigin="anonymous"></script> -->
@@ -42,8 +48,6 @@
 </head>
 
 <body>
-
-
 	<div class="container-contact100">
 		<div class="wrap-contact100">
 			<div class="logo">
@@ -58,20 +62,7 @@
 				<span class="contact100-form-title">Compare Planes</span>
 
 				<!-- price -->
-				<!-- <div class="price-div center-content">
-					<div class="wrap-input100">
-						<span class="label-input100 label-input100-basics">Precio del vehículo <span class="required-highlight">*</span></span>
-						<div class="single-icon center-content">
-							<div class="left-input">
-								<div class="fa-icon-center"><i class="fas fa-car"></i></div>
-							</div>
-							<div class="right-input">
-								<input class="input100 input100-basics numMask" type="text" name="price_tag" id="price_tag" placeholder="Precio" pattern="[0-9]*">
-								<span class="focus-input100"></span>
-							</div>
-						</div>
-					</div>
-				</div> -->
+
 
 				<!-- price -->
 				<div class="wrap-input100">
@@ -91,24 +82,10 @@
 
 				<!-- plan selector -->
 				<div class="plan-selector-div center-content">
-
 					<!-- Plan Selector Title -->
 					<!-- <span class="contact100-form-title">Seleccione Plan</span> -->
-
-					<div class="left">
-						<!-- Select Plan -->
-						<div class="select_container">
-							<select class="plan_selector" id="plan_name_p1_tag">
-							</select>
-						</div>
-					</div>
-					<div class="right">
-						<!-- Select Plan -->
-						<div class="select_container">
-							<select class="plan_selector" id="plan_name_p2_tag">
-							</select>
-						</div>
-					</div>
+					<div class="left"><div class="select_container"><select class="plan_selector" id="plan_name_p1_tag"></select></div></div>
+					<div class="right"><div class="select_container"><select class="plan_selector" id="plan_name_p2_tag"></select></div></div>
 				</div>
 
 				<!-- predefined atributes -->
@@ -133,9 +110,13 @@
 								<!-- <div class="adjusted-input"><span class="value-measure-class"><input class="input100-basics independent-field_p1 percentMask" type="text" name="rate_p1_tag" id="rate_p1_tag" placeholder="%"></span></div> -->
 								<div class="percent-comparator rate-div-width-main">
 									<!-- Percent Number -->
-									<div class="percent-value adjusted-input rate-div-width"><input
-											class="input100 input100-basics independent-field_p1_dec percentMask"
-											type="text" name="rate_p1_tag" id="rate_p1_tag" placeholder="$"></div>
+									<div class="percent-value adjusted-input rate-div-width">
+										<!--percentMask-->
+										<input
+											class="input100 input100-basics rate_focus independent-field"
+											type="text" name="rate_p1_tag" id="rate_p1_tag" placeholder="%"
+										>
+									</div>
 									<!-- Percent Symbol -->
 									<div class="percent-symbol"><input class="input100 input100-basics" type="text"
 											disabled placeholder="%" value="%"></div>
@@ -147,9 +128,12 @@
 								<!-- <div class="adjusted-input"><span class="value-measure-class"><input class="input100-basics independent-field_p2 percentMask" type="text" name="rate_p2_tag" id="rate_p2_tag" placeholder="%"></span></div> -->
 								<div class="percent-comparator rate-div-width-main">
 									<!-- Percent Number -->
-									<div class="percent-value adjusted-input rate-div-width"><input
-											class="input100 input100-basics independent-field_p2_dec" type="text"
-											name="rate_p2_tag" id="rate_p2_tag" placeholder="$"></div>
+									<div class="percent-value adjusted-input rate-div-width">
+										<input
+											class="input100 input100-basics rate_focus independent-field" 
+											type="text" name="rate_p2_tag" id="rate_p2_tag" placeholder="%"
+										>
+									</div>
 									<!-- Percent Symbol -->
 									<div class="percent-symbol"><input class="input100 input100-basics" type="text"
 											disabled placeholder="%" value="%"></div>
@@ -158,6 +142,60 @@
 						</div>
 					</div>
 
+					<!-- NPer -->
+					<div class="item-div">
+						<div class="item-label-div">
+							<span><i class="fas fa-calendar-alt"></i></span><span
+								class="label-input100 label-input100-basics">Cantidad de períodos <span
+									class="required-highlight">*</span></span>
+						</div>
+						<div class="item-value-div">
+							<div class="left">
+								<div class="text-unit">
+									<div class="percent-value adjusted-input"><input
+											class="input100 input100-basics independent-field" type="text"
+											name="n_per_p1_tag" id="n_per_p1_tag" placeholder="Períodos"></div>
+									<div class="percent-symbol"><input class="input100 input100-basics" type="text"
+											disabled placeholder="Períodos" value="Períodos"></div>
+								</div>
+							</div>
+							<div class="right">
+								<div class="text-unit">
+									<div class="percent-value adjusted-input"><input
+											class="input100 input100-basics independent-field" type="text"
+											name="n_per_p2_tag" id="n_per_p2_tag" placeholder="Períodos"></div>
+									<div class="percent-symbol"><input class="input100 input100-basics" type="text"
+											disabled placeholder="Períodos" value="Períodos"></div>
+								</div>
+							</div>
+						</div>
+					</div>
+					
+					<!-- Per -->
+					<div class="item-div">
+						<div class="item-label-div">
+							<span><i class="fas fa-calendar-alt"></i></span><span
+								class="label-input100 label-input100-basics">Pagos <span
+									class="required-highlight">*</span></span>
+						</div>
+						<div class="item-value-div">
+							<div class="left">
+								<div class="text-unit">
+									<div class="adjusted-input">
+										<select class="per_selector" id="per_p1_tag"></select>
+									</div>
+								</div>
+							</div>
+							<div class="right">
+								<div class="text-unit">
+									<div class="adjusted-input">
+										<select class="per_selector" id="per_p2_tag"></select>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					
 					<!-- Term -->
 					<div class="item-div">
 						<!-- label -->
@@ -176,8 +214,8 @@
 								<div class="text-unit">
 									<!-- Percent Number -->
 									<div class="percent-value adjusted-input"><input
-											class="input100 input100-basics independent-field_p1" type="text"
-											name="months_p1_tag" id="months_p1_tag" placeholder="Mes"></div>
+											class="input100 input100-basics" type="text"
+											name="months_p1_tag" id="months_p1_tag" placeholder="Meses" disabled></div>
 									<!-- Percent Symbol -->
 									<div class="percent-symbol"><input class="input100 input100-basics" type="text"
 											disabled placeholder="Meses" value="Meses"></div>
@@ -190,8 +228,8 @@
 								<div class="text-unit">
 									<!-- Percent Number -->
 									<div class="percent-value adjusted-input"><input
-											class="input100 input100-basics independent-field_p2" type="text"
-											name="months_p2_tag" id="months_p2_tag" placeholder="Mes"></div>
+											class="input100 input100-basics" type="text"
+											name="months_p2_tag" id="months_p2_tag" placeholder="Meses" disabled></div>
 									<!-- Percent Symbol -->
 									<div class="percent-symbol"><input class="input100 input100-basics" type="text"
 											disabled placeholder="Meses" value="Meses"></div>
@@ -217,8 +255,8 @@
 								<div class="text-unit">
 									<!-- Percent Number -->
 									<div class="percent-value adjusted-input"><input
-											class="input100 input100-basics independent-field_p1" type="text"
-											name="grace_p1_tag" id="grace_p1_tag" placeholder="Mes"></div>
+											class="input100 input100-basics independent-field" type="text"
+											name="grace_p1_tag" id="grace_p1_tag" placeholder="Meses"></div>
 									<!-- Percent Symbol -->
 									<div class="percent-symbol"><input class="input100 input100-basics" type="text"
 											disabled placeholder="Meses" value="Meses"></div>
@@ -231,11 +269,11 @@
 								<div class="text-unit">
 									<!-- Percent Number -->
 									<div class="percent-value adjusted-input"><input
-											class="input100 input100-basics independent-field_p2" type="text"
-											name="grace_p2_tag" id="grace_p2_tag" placeholder="Mes"></div>
+											class="input100 input100-basics independent-field" type="text"
+											name="grace_p2_tag" id="grace_p2_tag" placeholder="Meses"></div>
 									<!-- Percent Symbol -->
 									<div class="percent-symbol"><input class="input100 input100-basics" type="text"
-											disabled placeholder="Meses" value="Meses"></div>
+											disabled placeholder="Meseses" value="Meses"></div>
 								</div>
 							</div>
 						</div>
@@ -351,7 +389,7 @@
 						<!-- Resultados Title -->
 						<div class="sub-title"><span class="contact100-form-title">Resultados</span></div>
 
-						<!-- Monthly Payment -->
+						<!-- Periodic Payment -->
 						<div class="item-div">
 							<!-- label -->
 							<div class="item-label-div">
@@ -364,14 +402,14 @@
 								<div class="left">
 									<!-- Monthly Payment P1 -->
 									<input class="input100 input100-basics numMask" type="text"
-										name="monthly_payment_p1_tag" id="monthly_payment_p1_tag" placeholder="$"
+										name="periodic_payment_p1_tag" id="periodic_payment_p1_tag" placeholder="$"
 										pattern="[0-9]*" disabled>
 								</div>
 								<!-- p2 -->
 								<div class="right">
 									<!-- Monthly Payment P2 -->
 									<input class="input100 input100-basics numMask" type="text"
-										name="monthly_payment_p2_tag" id="monthly_payment_p2_tag" placeholder="$"
+										name="periodic_payment_p2_tag" id="periodic_payment_p2_tag" placeholder="$"
 										pattern="[0-9]*" disabled>
 								</div>
 							</div>
@@ -403,36 +441,6 @@
 								</div>
 							</div>
 						</div>
-
-						<!-- Down Payment Value -->
-						<!-- <div class="item-div">
-							<div class="item-label-div">
-								<span><i class="fas fa-sort-amount-down"></i></span><span class="label-input100 label-input100-basics">Cuota Inicial</span>
-							</div>
-							<div class="item-value-div">
-								<div class="left">
-									<input class="input100 input100-basics numMask" type="text" name="down_payment_value_p1_tag" id="down_payment_value_p1_tag" placeholder="$" pattern="[0-9]*" disabled>
-								</div>
-								<div class="right">
-									<input class="input100 input100-basics numMask" type="text" name="down_payment_value_p2_tag" id="down_payment_value_p2_tag" placeholder="$" pattern="[0-9]*" disabled>
-								</div>
-							</div>
-						</div> -->
-
-						<!-- Residual Payment Value -->
-						<!-- <div class="item-div">
-							<div class="item-label-div">
-								<span><i class="fas fa-handshake"></i></span><span class="label-input100 label-input100-basics">Valor Residual</span>
-							</div>
-							<div class="item-value-div">
-								<div class="left">
-									<input class="input100 input100-basics numMask" type="text" name="residual_payment_value_p1_tag" id="residual_payment_value_p1_tag" placeholder="$" pattern="[0-9]*" disabled>
-								</div>
-								<div class="right">
-									<input class="input100 input100-basics numMask" type="text" name="residual_payment_value_p2_tag" id="residual_payment_value_p2_tag" placeholder="$" pattern="[0-9]*" disabled>
-								</div>
-							</div>
-						</div> -->
 
 						<!-- Remaining Payment -->
 						<div class="item-div">
@@ -469,14 +477,14 @@
 							<div class="item-value-div">
 								<!-- p1 -->
 								<div class="left">
-									<!-- Accumulated Payment P1 -->
+									<!-- Total Payment P1 -->
 									<input class="input100 input100-basics numMask" type="text"
 										name="total_payment_p1_tag" id="total_payment_p1_tag" placeholder="$"
 										pattern="[0-9]*" disabled>
 								</div>
 								<!-- p2 -->
 								<div class="right">
-									<!-- Accumulated Payment P2 -->
+									<!-- Total Payment P2 -->
 									<input class="input100 input100-basics numMask" type="text"
 										name="total_payment_p2_tag" id="total_payment_p2_tag" placeholder="$"
 										pattern="[0-9]*" disabled>

@@ -3,8 +3,7 @@ const ORDERS_API = `https://financial-plans.ivchip.now.sh/api/plans`;
 let contentTable = document.querySelector('.contentTable');
 let loader = document.querySelector('.loader');
 let createUpdate = document.querySelector('.createUpdate');
-//let main = document.querySelector('.main');
-let main = document.querySelector('.main_crud_section');
+let main = document.querySelector('.main_crud_section');  //let main = document.querySelector('.main');
 let noUpdate = document.querySelector('.noUpdate');
 let onlyInputs = document.querySelector('.onlyInputs');
 let isUpdate = false;
@@ -21,46 +20,11 @@ let residual_payment = document.getElementById('residualPayment');
 let grace_per = document.getElementById('gracePer');
 let image_url = document.getElementById('imageUrl');
 
+let default_image_id = "images/timelines/00.04.Gancho_Premium.png"
+
 window.addEventListener('load', () => {
   fetchPlans();
 });
-
-function hideSpinner() {
-  if (loader.style.display === 'none') {
-    loader.style.display = 'block';
-  } else {
-    loader.style.display = 'none';
-    createUpdate.style.display = 'none';
-  }
-}
-
-function showCreatePlan() {
-  main.style.display = 'none';
-  createUpdate.style.display = 'block';
-  enableInputs();
-  clearInputs();
-  isUpdate = false;
-  isUpdateImage = false;
-}
-
-function fetchPlans() {
-  loader.style.display = 'block';
-  fetch(`${ORDERS_API}`, {
-    method: 'GET'
-  })
-    .then(response => response.json())
-    .then(response => {
-      if (response.data) {
-        printTable(response.data);
-      } else {
-        loader.style.display = 'none';
-      }
-    })
-    .catch(error => {
-      loader.style.display = 'none';
-      alert(`HTTP-Error: ${error}`);
-    });
-}
 
 function printTable(data) {
   contentTable.innerHTML = '';
@@ -69,39 +33,25 @@ function printTable(data) {
     contentTable.innerHTML += `
     <tr>
       <td class='data_col_min hidden_col'>${index}</td>
-      <td class='data_col_min col-sm-2 col-md-2 col-lg-2'>${item.name}</td>
-      <td class='data_col_min col-sm-1 col-md-1 col-lg-1'>${item.rate}</td>
-      <td class='data_col_min col-sm-1 col-md-1 col-lg-1'>${item.per}</td>
-      <td class='data_col_min col-sm-1 col-md-1 col-lg-1'>${item.n_per}</td>
-      <td class='data_col_min col-sm-1 col-md-1 col-lg-1'>${item.down_payment}</td>
-      <td class='data_col_min col-sm-1 col-md-1 col-lg-1'>${item.residual_payment}</td>
-      <td class='data_col_min' col-sm-1 col-md-1 col-lg-1>${item.grace_per}</td>
-      <td class='data_col_min hidden_col'>
-        <span>${item.image_url}</span>
-      </td>    
-      <!--
-      <td class='data_col_min col-sm-2 col-md-2 col-lg-2'>
-        <span class='data_col_butt'>
-          <button onclick="planById('${item._id}', 'imageUpdate')" class="btn crud-edit-btn"><i class="far fa-images"></i></button>
-        </span>
+      <td class='data_col_min_name'>${item.name}</td>
+      <td class='data_col_min'>${item.rate}</td>
+      <td class='data_col_min'>${item.per}</td>
+      <td class='data_col_min'>${item.n_per}</td>
+      <td class='data_col_min hidden_col'>${item.down_payment}</td>
+      <td class='data_col_min hidden_col'>${item.residual_payment}</td>
+      <td class='data_col_min hidden_col'>${item.grace_per}</td>
+      <!--<td class='data_col_min hidden_col'><span>${item.image_url}</span></td>-->
+      <td class='data_col_butt'>
+        <button onclick="planById('${item._id}', 'dataUpdate')" class="btn crud-edit-btn"><i class="fas fa-edit"></i></button>
       </td>
-      -->
-      <!--
-      <td>
-        <button onclick="planById('${item._id}', 'imageUpdate')" class="btn">Change image</button>
+      <td class='data_col_butt'>
+        <button onclick="planById('${item._id}', 'imageUpdate')" class="btn crud-edit-btn"><i class="fas fa-image"></i></button>
       </td>
-      -->
-      
-      <td>
-        <span class='data_col_butt col-sm-2 col-md-2 col-lg-2'>
-          <button onclick="planById('${item._id}', 'dataUpdate')" class="btn crud-edit-btn"><i class="fas fa-edit"></i></button>
-        </span>
-        <span class='data_col_butt'>
-          <button id="btn_${item._id}" onclick="toggleState('${item._id}', ${item.active});" class="btn crud-edit-btn">
-              ${item.active == true ? '<i class="fas fa-toggle-on"></i>' : '<i class="fas fa-toggle-off"></i>'}
-          </button>
-        </span>
-      
+      <td class='data_col_butt'>
+          <button 
+            id="btn_${item._id}" 
+            onclick="toggleState('${item._id}', ${item.active});" class="btn crud-edit-btn"
+          >${item.active == true ? '<i class="fas fa-toggle-on"></i>' : '<i class="fas fa-toggle-off"></i>'}</button>
       </td>
     </tr>
     `;
@@ -109,6 +59,7 @@ function printTable(data) {
   });
   loader.style.display = 'none';
 }
+
 
 function toggleState(id, state) {
   loader.style.display = 'block';
@@ -126,7 +77,8 @@ function toggleState(id, state) {
     .then(response => {
       let btn = document.getElementById(`btn_${id}`);
       btn.setAttribute('onClick', `toggleState('${id}', ${!state})`);
-      btn.innerHTML = !state == true ? `<i class="fas fa-toggle-on"></i>` : `<i class="fas fa-toggle-off"></i>`;
+      btn.innerHTML = !state == true ? '<i class="fas fa-toggle-on"></i>' : '<i class="fas fa-toggle-off"></i>';
+      //btn.textContent = !state == true ? 'Enable' : 'Disable';
       fetchMessage(response);
       loader.style.display = 'none';
     })
@@ -158,8 +110,7 @@ function planById(id, context) {
           residual_payment.value = data.residual_payment;
           grace_per.value = data.grace_per;
           enableInputs();
-          /*noUpdate.style.display = 'none';*/
-          /*noUpdate.style.display = 'block';*/
+          noUpdate.style.display = 'none';
           image_url.required = false;
           isUpdate = true;
         } else if (context === 'imageUpdate') {
@@ -171,10 +122,9 @@ function planById(id, context) {
           _id.value = data._id;
           disableInputs();
           noUpdate.style.display = 'block';
-          image_url.required = false;  // true
+          image_url.required = true;
           isUpdate = true;
-          //isUpdateImage = true;
-          isUpdateImage = false;
+          isUpdateImage = true;
         }
       }
       loader.style.display = 'none';
@@ -185,9 +135,8 @@ function planById(id, context) {
     });
 }
 
-createUpdateForm.onsubmit = function(event) {
+createUpdateForm.onsubmit = function (event) {
   event.preventDefault();
-  isUpdateImage = true; /// test image
   const formData = dataForm();
   if (confirm('Are you sure you submit?')) {
     loader.style.display = 'block';
@@ -243,23 +192,6 @@ createUpdateForm.onsubmit = function(event) {
   }
 };
 
-function isInt(evt) {
-  let charCode = evt.which ? evt.which : event.keyCode;
-  if (charCode > 31 && (charCode < 48 || charCode > 57)) return false;
-  return true;
-}
-
-function isFloat(evt, id) {
-  let charCode = evt.which ? evt.which : event.keyCode;
-  if (charCode == 46) {
-    let txt = document.getElementById(id).value;
-    if (!(txt.indexOf('.') > -1)) {
-      return true;
-    }
-  }
-  if (charCode > 31 && (charCode < 48 || charCode > 57)) return false;
-  return true;
-}
 
 function dataForm() {
   if (!isUpdate) {
@@ -290,6 +222,79 @@ function dataForm() {
       return formData;
     }
   }
+}
+
+function showTable() {
+  createUpdate.style.display = 'none';
+  onlyInputs.style.display = 'block';
+  noUpdate.style.display = 'block';
+  main.style.display = 'block';
+}
+
+function updateView() {
+  createUpdate.style.display = 'none';
+  onlyInputs.style.display = 'block';
+  main.style.display = 'block';
+  loader.style.display = 'none';
+  fetchPlans();
+}
+
+// Helper functions
+function fetchPlans() {
+  loader.style.display = 'block';
+  fetch(`${ORDERS_API}`, {
+    method: 'GET'
+  })
+    .then(response => response.json())
+    .then(response => {
+      if (response.data) {
+        printTable(response.data);
+      } else {
+        loader.style.display = 'none';
+      }
+    })
+    .catch(error => {
+      loader.style.display = 'none';
+      alert(`HTTP-Error: ${error}`);
+    });
+}
+
+// Other
+
+function showCreatePlan() {
+  main.style.display = 'none';
+  createUpdate.style.display = 'block';
+  enableInputs();
+  clearInputs();
+  isUpdate = false;
+  isUpdateImage = false;
+}
+
+function hideSpinner() {
+  if (loader.style.display === 'none') {
+    loader.style.display = 'block';
+  } else {
+    loader.style.display = 'none';
+    createUpdate.style.display = 'none';
+  }
+}
+
+function isInt(evt) {
+  let charCode = evt.which ? evt.which : event.keyCode;
+  if (charCode > 31 && (charCode < 48 || charCode > 57)) return false;
+  return true;
+}
+
+function isFloat(evt, id) {
+  let charCode = evt.which ? evt.which : event.keyCode;
+  if (charCode == 46) {
+    let txt = document.getElementById(id).value;
+    if (!(txt.indexOf('.') > -1)) {
+      return true;
+    }
+  }
+  if (charCode > 31 && (charCode < 48 || charCode > 57)) return false;
+  return true;
 }
 
 function clearInputs() {
@@ -334,30 +339,15 @@ function fetchMessage(json) {
   }
 }
 
-function updateView() {
-  createUpdate.style.display = 'none';
-  onlyInputs.style.display = 'block';
-  main.style.display = 'block';
-  loader.style.display = 'none';
-  fetchPlans();
-}
-
-function showTable() {
-  createUpdate.style.display = 'none';
-  onlyInputs.style.display = 'block';
-  noUpdate.style.display = 'block';
-  main.style.display = 'block';
-}
-
 function validateImage() {
   let file = image_url.files[0];
   let type = file.type.split('/').pop().toLowerCase();
   if (type != "jpeg" && type != "jpg" && type != "png" && type != "gif") {
-      alert('Please select a valid image file');
-      image_url.value = '';
+    alert('Please select a valid image file');
+    image_url.value = '';
   }
   if (file.size > 1024000 * 5) {
-      alert('Max Upload size is 5MB only');
-      image_url.value = '';
+    alert('Max Upload size is 5MB only');
+    image_url.value = '';
   }
 }

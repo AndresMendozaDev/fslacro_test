@@ -1,0 +1,9 @@
+- Cantidad de periodos
+- Tamaño del período
+- Comparador todos contra todos	
+	X Mejor resaltado en comparador
+	
+X Tabla pagos scroll
+X CRUD con porcentajes y cambio en meses (1->mes, 12->año, etc)	
+X Cuotas extra
+X Imagenes
